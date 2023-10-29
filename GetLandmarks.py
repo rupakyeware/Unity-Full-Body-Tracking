@@ -5,17 +5,6 @@ mp_drawing = mp.solutions.drawing_utils
 mp_holistic = mp.solutions.holistic
 
 cap = cv2.VideoCapture(0)
-while cap.isOpened():
-    ret, frame = cap.read()
-    cv2.imshow('Raw Video Feed', frame)
-    
-    if cv2.waitKey(10) & 0xFF == ord('q'):
-        break
-        
-cap.release()
-cv2.destroyAllWindows()
-
-cap = cv2.VideoCapture(0)
 
 #Initiate holistic model
 with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
